@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+# TODO: offer to clear camera storage
+
+srcdir=$CAM_SRC
+bkpdir=$CAM_BKP
+
+[ ! -d $srcdir ] && echo "$srcdir not found" && exit 1
+[ ! -d $bkpdir ] && echo "$bkpdir not found" && exit 1
+
+rsync --update --recursive --human-readable --progress $srcdir $bkpdir
+
+exit 0

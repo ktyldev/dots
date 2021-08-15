@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+picdir="$HOME/pic/cam/"
+
+cd $picdir
+darktable . &
+sxiv . &
