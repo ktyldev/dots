@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+sxhkd &                     # enable keybinds
+
+. $SCRIPTS/comp             # mblur
+
+redshift -l 53:0 &          # make our eyes less strained
+
+mopdiy &                    # bops
+xbanish &                   # fuck off cursor
+udiskie &                   # external drive management
+
+#asusd-user &

@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+# TODO: environment variables!!
+
+srcdir="/run/media/$USER/disk/"
+bkpdir="/run/media/$USER/7ACE1422CE13D4EB/cam"
+
+[ ! -d $srcdir ] && echo "$srcdir not found" && exit 1
+[ ! -d $bkpdir ] && echo "$bkpdir not found" && exit 1
+
+rsync --update --recursive --human-readable --progress $srcdir $bkpdir
+
+exit 0
+
+#picdir="$mnt/DCIM/100MSDCF/"
+#picdestdir="$HOME/pic/cam"
+#
+#echo "\n. jpg -> $picdestdir\n"
+#cp -prv `find $picdir -name '*.JPG'` $picdestdir
+#echo "\n. arw -> $picdestdir\n"
+#cp -prv `find $picdir -name '*.ARW'` $picdestdir
+#
+#viddir="$mnt/PRIVATE/M4ROOT/CLIP/"
+#viddestdir="$HOME/vid/cam/"
+#
+#echo "\n. mp4 -> $viddestdir\n"
+#cp -prv `find $viddir -name '*.MP4'` $viddestdir
