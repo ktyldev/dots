@@ -31,11 +31,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 source "$SCRIPTS/alias.sh"
 
-# you're not in Vim ya dummy
-alias :q=exit
-alias :wq=exit
-alias :w="make run"
-
 # start ssh-agent automatically
 ssh-agent
 eval $(ssh-agent -s)
