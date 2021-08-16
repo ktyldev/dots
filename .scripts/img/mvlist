@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+while read l; do mv $l $1; done <./list
+
+rm ./list

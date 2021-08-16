@@ -9,8 +9,6 @@ export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
 
 export SCRIPTS=$HOME/.scripts
 source $SCRIPTS/env.sh
-export PATH=$PATH:$SCRIPTS
-export PATH=$PATH:$SCRIPTS/cam
 
 export TERMINAL=/usr/bin/kitty
 export EDITOR=/usr/bin/nvim
