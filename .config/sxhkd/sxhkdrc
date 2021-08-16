@@ -10,6 +10,10 @@ super + Return
 super + b
 	/usr/bin/firefox
 
+# tiny web browser
+super + s
+    surf ecosia.org
+
 # program launcher
 super + r
 	rofi -show run
@@ -210,22 +214,3 @@ super + KP_Divide
 
 Print
 	$HOME/.scripts/screenshot.sh
-
-#
-# razer macro keys
-#
-
-XF86Tools
-    $HOME/.scripts/toggle-gaps.sh
-
-XF86Launch5
-    $HOME/.scripts/toggle-compositor.sh
-
-XF86Launch6
-    $HOME/.scripts/lightswitch.sh
-
-XF86Launch7
-    $HOME/.scripts/emoji.sh
-
-XF86Launch8
-    $HOME/.scripts/ufetch-rice
