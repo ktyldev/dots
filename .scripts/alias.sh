@@ -9,6 +9,7 @@ alias nf="neofetch"
 alias p="ping archlinux.org"
 alias o=xdg-open
 alias r=ranger
+alias s="search"
 alias sv="sudo $EDITOR"
 alias t="$SCRIPTS/term.sh &"
 alias td=todolist
