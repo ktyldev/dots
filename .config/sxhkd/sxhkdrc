@@ -138,6 +138,14 @@ super + {Left,Down,Up,Right}
 super + shift + g
     $SCRIPTS/toggle-gaps
 
+#
+# screen brightness
+#
+XF86MonBrightnessUp
+    $SCRIPTS/backlight +
+
+XF86MonBrightnessDown
+    $SCRIPTS/backlight -
 
 #
 # media keys

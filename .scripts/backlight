@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+step=2
+value=`xbacklight -get`
+
+# double, halve value or bail
+if [ "$1" == "+" ]; then
+    let value*=$step
+elif [ "$1" == "-" ]; then
+    let value/=$step
+else 
+    echo "usage: backlight +, backlight -"
+    exit 1
+fi
+
+# check range
+min=1
+max=100
+[[ $value -lt $min ]] && value=$min
+[[ $value -gt $max ]] && value=$max
+
+xbacklight -set $value -steps 10
