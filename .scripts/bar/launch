@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+polybar example &               # launch bar
+touch $CONFIG/polybar/visible   # create a file to keep track of the bar's visibility
+                                #   file exists -> bar visible
+                                #   file doesnt exist -> bar hidden
+                        

@@ -2,6 +2,8 @@
 sxhkd &                     # enable keybinds
 
 . $SCRIPTS/comp             # mblur
+. $SCRIPTS/keeb             # caps lock -> ctrl+esc
+. $SCRIPTS/bar/launch       # bar
 
 redshift -l 53:0 &          # make our eyes less strained
 

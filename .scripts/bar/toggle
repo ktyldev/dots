@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+visible=$CONFIG/polybar/visible
+barheight=27
+
+if [ -f $visible ]; then
+    bspc config top_padding 0
+    polybar-msg cmd hide
+    rm $visible
+else
+    bspc config top_padding 27
+    polybar-msg cmd show
+    touch $visible
+fi
+
+

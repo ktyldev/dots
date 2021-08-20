@@ -6,9 +6,9 @@
 super + Return
 	$HOME/.scripts/term.sh
 
-# web browser
+# toggle bar
 super + b
-	/usr/bin/firefox
+	$SCRIPTS/bar/toggle
 
 # tiny web browser
 super + s
