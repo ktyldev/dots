@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# TODO: support low+medium levels as well
+[[ "$1" == "+" ]] && asusctl -k high
+[[ "$1" == "-" ]] && asusctl -k off
