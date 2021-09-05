@@ -15,8 +15,8 @@ super + s
     surf ecosia.org
 
 # program launcher
-super + r
-	rofi -show run
+super + d
+    dmenu_run
 
 # make sxhkd and bspwm reload their configuration files:
 super + Escape
@@ -150,10 +150,10 @@ XF86MonBrightnessDown
 # keyboard backlight
 #
 XF86KbdBrightnessUp
-    $SCRIPTS/kbdbacklight +
+    $SCRIPTS/kbd/kbdbacklight +
 
 XF86KbdBrightnessDown
-    $SCRIPTS/kbdbacklight -
+    $SCRIPTS/kbd/kbdbacklight -
 
 #
 # media keys
