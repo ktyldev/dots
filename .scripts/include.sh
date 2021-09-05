@@ -7,3 +7,4 @@ source $SCRIPTS/cam/env.sh
 export PATH=$PATH:$SCRIPTS
 export PATH=$PATH:$SCRIPTS/cam
 export PATH=$PATH:$SCRIPTS/img
+export PATH=$PATH:$SCRIPTS/screenshot

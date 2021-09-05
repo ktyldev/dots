@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+bgdir="$HOME/pic/bg"
+cache="$HOME/.cache/wal"
+config="$HOME/.config"
+
+dir=$bgdir
+if [ $# -eq 1 ]; then
+    dir=$1
+fi
+
+file=`sxiv -o $dir`
+if [ $# -eq 1 ]; then
+    cp $file $bgdir/`basename $file`
+fi
+
+# generate terminal colors with wal
+wal -i $file
+
+# move temporary files to config in case .cache gets nuked hee hoo
+cp "$cache/colors-kitty.conf" "$config/kitty/colors-kitty.conf"
+cp "$cache/colors-rofi-light.rasi" "$config/rofi/colors-rofi-light.rasi"
+cp "$cache/colors-rofi-dark.rasi" "$config/rofi/colors-rofi-dark.rasi"
+
+# update x resources
+xrdb "$cache/colors.Xresources"
+
+# set system theme with wpg
+#wpg -a $file -l
+#wpg -s $file -l
+
+# reload bspwm
+$HOME/.config/bspwm/bspwmrc reload

@@ -24,9 +24,9 @@ super + Escape
 	$HOME/.config/bspwm/bspwmrc reload
 
 Print
-    xfce4-screenshooter
+    $SCRIPTS/screenshot/ssall
 super + shift + s
-    xfce4-screenshooter -cr
+    $SCRIPTS/screenshot/ssregion
 
 #
 # bspwm hotkeys

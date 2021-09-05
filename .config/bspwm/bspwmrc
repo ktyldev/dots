@@ -2,8 +2,10 @@
 
 export BSPWM_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm"
 
-# theme colours
-. "${HOME}/.cache/wal/colors.sh"
+# restore theme colours
+walcache="$HOME/.cache/wal"
+. "$walcache/colors.sh"
+xrdb "$walcache/colors.Xresources"
 
 # launch bar
 . $SCRIPTS/bar/launch
@@ -13,14 +15,10 @@ bspc monitor --reset-desktops 1 2 3 4 5 6 7 8 9 0
 bspc config border_width		0
 bspc config window_gap          0
 
-visible=$CONFIG/polybar/.visible
-
-vpadding=0
-hpadding=0
-bspc config top_padding         $vpadding
-bspc config bottom_padding      $vpadding
-bspc config left_padding        $hpadding
-bspc config right_padding       $hpadding
+bspc config top_padding         0
+bspc config bottom_padding      0
+bspc config left_padding        0
+bspc config right_padding       0
 
 bspc config split_ratio			0.52
 bspc config borderless_monocle	true
