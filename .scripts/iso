@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+iso=$1
+drive=$2
+
+dd bs=4M if=$iso of=$drive conv=fsync oflag=direct status=progress
