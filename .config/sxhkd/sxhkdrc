@@ -16,7 +16,7 @@ super + s
 
 # program launcher
 super + d
-    dmenu_run
+    dmenu_run -b
 
 # make sxhkd and bspwm reload their configuration files:
 super + Escape

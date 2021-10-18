@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias bops="ssh boptop"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias en="dict -d fra-eng"
 alias f=fff
