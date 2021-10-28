@@ -5,6 +5,11 @@
 srcdir=$CAM_SRC
 bkpdir=$CAM_BKP
 
+if [ "$#" -eq 2 ]; then
+    srcdir=$1
+    bkpdir=$2
+fi
+
 [ ! -d $srcdir ] && echo "$srcdir not found" && exit 1
 [ ! -d $bkpdir ] && echo "$bkpdir not found" && exit 1
 

@@ -1,0 +1,120 @@
+#!/usr/bin/env python
+
+# usage: metasort SRCDIR DESTDIR
+
+# this script iterates through every file in SRCDIR, copying them into a YYYY/MM/DD folder structure rooted in DESTDIR. 
+# EXIF data is read from jpg images. files with matching basenames to jpg images (.JPG.xmp, .ARW) are copied with their matching JPG images.
+
+# TODO:
+#
+#   copy images and associated files into folders
+
+import os
+import sys
+import re
+import pathlib
+import shutil
+import exifread
+import datetime
+
+# parse and validate arguments
+
+if len(sys.argv) != 3:
+    print("usage: metasort SRCDIR DESTDIR")
+    sys.exit(1)
+
+src_dir = sys.argv[1]
+dest_dir = sys.argv[2]
+
+def check_is_dir(path):
+    if not os.path.isdir(path):
+        print("{} is not a directory".format(path))
+        sys.exit(1)
+
+check_is_dir(src_dir)
+check_is_dir(dest_dir)
+
+# arguments ok!
+
+src_filenames = next(os.walk(src_dir), (None, None, []))[2]
+src_filenames.sort()
+
+jpg_pattern = re.compile("^(.+)(\.JPG)$")
+
+bad_jpgs = []
+
+def get_all_files_for_name(filename):
+    stem = pathlib.Path(filename).stem
+    stem_pattern = re.compile("^({})(\..+)$".format(stem))
+
+    files = []
+    files.append(filename)
+
+    for other_filename in src_filenames:
+
+        if jpg_pattern.match(other_filename):
+            continue
+
+        if stem_pattern.match(other_filename):
+            files.append(other_filename)
+
+    return files
+
+
+copied = 0
+for src_filename in src_filenames:
+
+    if not jpg_pattern.match(src_filename):
+        continue
+
+    # read exif properties
+    path = os.path.join(src_dir, src_filename)
+    tags = exifread.process_file(open(path, 'rb'))
+    date_tag = "Image DateTime"
+    if not date_tag in tags:
+        bad_jpgs.append(src_filename)
+        continue
+
+    date = datetime.datetime.strptime(str(tags[date_tag]), "%Y:%m:%d %H:%M:%S")
+
+    # make a directory for this date 
+    date_dir = os.path.join(dest_dir, str(date.year), f'{date.month:02}', f'{date.day:02}')
+    pathlib.Path(date_dir).mkdir(parents=True, exist_ok=True)
+
+    files = get_all_files_for_name(src_filename)
+
+    print("\n{}\t{}\t{}\t{}\n".format(src_filename, len(files), date, date_dir))
+
+    # copy all files into date_dir
+    for f in files:
+        f_src = os.path.join(src_dir, f)
+        f_dest = os.path.join(date_dir, f)
+
+        print(f"{f_src}\t->\t{f_dest}")
+        shutil.copy2(f_src, f_dest)
+        copied += 1
+
+# deal with bad files
+bad_dir = os.path.join(dest_dir, "corrupted")
+bad_files = []
+for bad_jpg in bad_jpgs:
+    for bad_file in get_all_files_for_name(bad_jpg):
+        bad_files.append(bad_file)
+
+if len(bad_files) > 0:
+    print("could not read metadata from {} jpgs:\n".format(len(bad_jpgs)))
+    print(", ".join(bad_jpgs))
+    print("\nin total, {} corrupt files were found:\n".format(len(bad_files)))
+    print(", ".join(bad_files))
+    print("\nthese will be copied to {}. maybe they can be fixed eventually 😔".format(bad_dir))
+
+    pathlib.Path(bad_dir).mkdir(parents=True, exist_ok=True)
+
+    # copy bad files to corrupted dir
+    for bad_file in bad_files:
+        bad_file_src = os.path.join(src_dir, bad_file)
+        bad_file_dest = os.path.join(bad_dir, bad_file)
+        shutil.copy2(bad_file_src, bad_file_dest)
+        copied += 1
+
+print(f"\nall done! {copied} files were copied in total. feel free to delete files in {src_dir}. have a nice day!")
