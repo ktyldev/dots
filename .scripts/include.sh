@@ -8,3 +8,4 @@ export PATH=$PATH:$SCRIPTS
 export PATH=$PATH:$SCRIPTS/cam
 export PATH=$PATH:$SCRIPTS/img
 export PATH=$PATH:$SCRIPTS/screenshot
+export PATH=$PATH:$SCRIPTS/anime-matrix
