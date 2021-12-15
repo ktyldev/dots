@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+killall asusctl
+exec asusctl anime image --path $HOME/.scripts/anime-matrix/black256.png &> /dev/null &

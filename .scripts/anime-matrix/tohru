@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-asusctl anime --enable true
-
-exec asusctl anime gif --path pic/tohrudancebw.gif --scale 0.9 --x-pos 3 --y-pos 2.2 --loops 0 &> /dev/null &
+killall asusctl
+exec asusctl anime gif --path pic/tohrudancebw.gif --scale 0.9 --x-pos 4 --y-pos 2.2 --loops 0 &> /dev/null &
