@@ -16,6 +16,8 @@ export ZSH=$HOME/.oh-my-zsh
 
 export WTTRURL="wttr.in/?0"
 
+export FFF_HIDDEN=1
+
 export XDG_CACHE_HOME=$HOME/.cache
 
 ZSH_THEME="sunaku"
