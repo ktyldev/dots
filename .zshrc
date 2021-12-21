@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source "$SCRIPTS/alias.sh"
+source "$SCRIPTS/func.sh"
 
 # start ssh-agent automatically
 ssh-agent
