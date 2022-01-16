@@ -10,13 +10,18 @@ super + Return
 super + b
 	$SCRIPTS/bar/toggle
 
-# tiny web browser
-super + s
-    surf ecosia.org
-
 # program launcher
 super + d
     dmenu_run -b
+
+# gapples
+super + g
+    $BSPWM_CONFIG/toggle-gaps
+
+# web browser
+super + s
+    nyxt
+
 
 # make sxhkd and bspwm reload their configuration files:
 super + Escape
@@ -49,7 +54,7 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
-super + g
+super + shift + g
 	bspc node -s biggest
 
 #
@@ -133,10 +138,6 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-# gapples
-super + shift + g
-    $SCRIPTS/toggle-gaps
 
 #
 # screen backlight
