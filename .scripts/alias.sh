@@ -16,7 +16,6 @@ alias t="$SCRIPTS/term.sh &"
 alias td=todolist
 alias theme="$SCRIPTS/theme"
 alias v=$EDITOR
-alias vi=$EDITOR
 alias w="curl '$WTTRURL'"
 alias weather="curl '$WTTRURL'"
 
