@@ -9,13 +9,13 @@ if [ $# -eq 1 ]; then
     dir=$1
 fi
 
-file=`sxiv -o $dir`
+file=$(sxiv -o "$dir")
 if [ $# -eq 1 ]; then
-    cp $file $bgdir/`basename $file`
+    cp "$file" "$bgdir"/"$(basename "$file")"
 fi
 
 # generate terminal colors with wal
-wal -i $file
+wal -i "$file"
 
 # move temporary files to config in case .cache gets nuked hee hoo
 cp "$cache/colors-kitty.conf" "$config/kitty/colors-kitty.conf"
@@ -30,4 +30,4 @@ xrdb "$cache/colors.Xresources"
 #wpg -s $file -l
 
 # reload bspwm
-$HOME/.config/bspwm/bspwmrc reload
+"$HOME"/.config/bspwm/bspwmrc reload
