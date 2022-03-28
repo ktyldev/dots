@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 alias bops="ssh boptop"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -7,11 +7,13 @@ alias f=fff
 alias fr="dict -d eng-fra"
 alias key="$SCRIPTS/sshkey.sh"
 alias nf="neofetch"
-alias p="ping archlinux.org"
 alias o=xdg-open
+alias p="ping archlinux.org"
+alias pub="curl ident.me; echo"
 alias r=ranger
 alias s="search"
 alias sv="sudo $EDITOR"
+alias sx="startx"
 alias t="$SCRIPTS/term.sh &"
 alias td=todolist
 alias theme="$SCRIPTS/theme"

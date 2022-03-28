@@ -29,7 +29,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source "$SCRIPTS/alias.sh"
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
+
 source "$SCRIPTS/func.sh"
 
 # start ssh-agent automatically
