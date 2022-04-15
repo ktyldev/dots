@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# take a screenshot of a region selected by the cursor and copy it to the clipboard
+# using maim and xclip
+
+# accept all passed arguments and pass them to maim
+maimflags="$@"
+
+dir="$(xdg-user-dir PICTURES)/ss"
+file="$dir/$(date +%s).png"
+
+# create screenshot dir if it doesn't exist
+[ -d $dir ] || mkdir -p $dir
+
+# save screenshot to a file with a unique ordered timestamp
+maim $maimflags $file
+
+# copy the file to the clipboard
+xclip -selection clipboard -target image/png $file
