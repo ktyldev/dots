@@ -29,9 +29,9 @@ super + Escape
 	$HOME/.config/bspwm/bspwmrc reload
 
 Print
-    $SCRIPTS/screenshot/ss
+    $SCRIPTS/ss
 super + shift + s
-    $SCRIPTS/screenshot/ss -Dosu
+    $SCRIPTS/ss -Dosu
 
 #
 # bspwm hotkeys
