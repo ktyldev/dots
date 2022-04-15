@@ -11,7 +11,7 @@ super + b
 	$SCRIPTS/bar/toggle
 
 # program launcher
-super + space
+super + d
     dmenu_run -b
 
 # gapples
