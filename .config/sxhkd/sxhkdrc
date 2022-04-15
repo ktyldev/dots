@@ -11,7 +11,7 @@ super + b
 	$SCRIPTS/bar/toggle
 
 # program launcher
-super + space
+super + d
     dmenu_run -b
 
 # gapples
@@ -29,9 +29,9 @@ super + Escape
 	$HOME/.config/bspwm/bspwmrc reload
 
 Print
-    $SCRIPTS/screenshot/ssall
+    $SCRIPTS/screenshot/ss
 super + shift + s
-    $SCRIPTS/screenshot/ssregion
+    $SCRIPTS/screenshot/ss -Dosu
 
 #
 # bspwm hotkeys
