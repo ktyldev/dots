@@ -2,9 +2,7 @@
 
 alias bops="ncmpcpp -c $HOME/.config/ncmpcpp/bopfig"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias en="dict -d fra-eng"
 alias f=fff
-alias fr="dict -d eng-fra"
 alias key="$SCRIPTS/sshkey.sh"
 alias nf="neofetch"
 alias o=xdg-open

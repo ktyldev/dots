@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+argos-translate --from-lang en --to-lang fr "$@"
