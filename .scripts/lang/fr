@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-argos-translate --from-lang en --to-lang fr "$@"
+# fully expand arguments
+phrase=$@
+
+argos-translate --from-lang en --to-lang fr "$phrase"
