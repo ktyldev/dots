@@ -6,3 +6,5 @@ display_bitrate = yes
 
 visualizer_type = "wave"
 visualizer_sync-interval = "1"
+
+media_library_primary_tag = "album_artist"
