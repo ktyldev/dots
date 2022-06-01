@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+. $SCRIPTS/keeb
+
 setxkbmap -v -layout us_qwerty-fr

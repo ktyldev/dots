@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# trouvez le signification d'un mot français
+
+mot=$1
+
+sdcv -c -n $mot
