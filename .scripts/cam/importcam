@@ -2,8 +2,8 @@
 
 # TODO: offer to clear camera storage
 
-srcdir=$CAM_SRC
-bkpdir=$CAM_BKP
+src=$CAM_SRC
+pic=$CAM_PIC
 
 if [ "$#" -eq 2 ]; then
     srcdir=$1
