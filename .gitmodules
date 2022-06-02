@@ -1,0 +1,9 @@
+[submodule "dwm"]
+	path = git/dwm
+	url = ssh://git@github.com/ktyldev/dwm
+[submodule "git/dwm.git"]
+	path = git/dwm.git
+	url = ssh://github.com/ktyldev/dwm.git
+[submodule "git/dwm"]
+	path = git/dwm
+	url = ssh://github.com/ktyldev/dwm.git
