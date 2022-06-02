@@ -39,6 +39,3 @@ source "$SCRIPTS/func.sh"
 ssh-agent
 eval $(ssh-agent -s)
 clear
-
-# restore theme
-(cat ~/.cache/wal/sequences &)
