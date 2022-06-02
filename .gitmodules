@@ -7,3 +7,6 @@
 [submodule "git/dwm"]
 	path = git/dwm
 	url = ssh://github.com/ktyldev/dwm.git
+[submodule "git/dwmstatus"]
+	path = git/dwmstatus
+	url = ssh://git@github.com/ktyldev/dwmstatus.git
