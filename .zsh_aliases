@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 alias bops="ncmpcpp -c $HOME/.config/ncmpcpp/bopfig"
-alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias f=fff
 alias key="$SCRIPTS/sshkey.sh"
 alias nf="neofetch"
