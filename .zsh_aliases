@@ -12,6 +12,7 @@ alias r=ranger
 alias s="search"
 alias sv="sudo $EDITOR"
 alias sx="startx"
+alias sz="source ~/.zshrc"
 alias t="$SCRIPTS/term.sh &"
 alias td=todolist
 alias theme="$SCRIPTS/theme"
