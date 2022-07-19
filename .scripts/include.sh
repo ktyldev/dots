@@ -11,3 +11,4 @@ export PATH=$PATH:$SCRIPTS/screenshot
 export PATH=$PATH:$SCRIPTS/anime-matrix
 export PATH=$PATH:$SCRIPTS/bitwarden
 export PATH=$PATH:$SCRIPTS/lang
+export PATH=$PATH:$SCRIPTS/bops
