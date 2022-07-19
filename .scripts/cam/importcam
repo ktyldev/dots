@@ -1,18 +1,38 @@
 #!/usr/bin/env zsh
 
-# TODO: offer to clear camera storage
+# copy photos with exif data on them into a date-structured directory hierarchy
 
-src=$CAM_SRC
-pic=$CAM_PIC
+# source and destination locations
+srcdir="$CAM_PIC_SRC"
+picdir="$(xdg-user-dir PICTURES)/cam"
 
-if [ "$#" -eq 2 ]; then
-    srcdir=$1
-    bkpdir=$2
-fi
+start=1
+total=`ls $srcdir | wc -l`
 
-[ ! -d $srcdir ] && echo "$srcdir not found" && exit 1
-[ ! -d $bkpdir ] && echo "$bkpdir not found" && exit 1
+for f in `ls $srcdir`
+do
+    progress="$start/$total"
+    start=$((start+1))
 
-rsync --update --recursive --human-readable --progress $srcdir $bkpdir
+    src="$srcdir/$f"
+
+    # get the exif create date and turn it into a filepath
+    datestr=`exiftool -CreateDate "$src"`
+    datedir=`echo "$datestr" | awk '{ gsub(":","/",$4); print $4; }'`
+    datedir="$picdir/$datedir"
+
+    # make sure the destination exists
+    [ ! -d $datedir ] && mkdir -p $datedir
+
+    dest="$datedir/$f"
+
+    # if the file exists, don't overwrite
+    if [ -f $dest ]; then
+        print "[$progress] skipping $src->$dest: destination file already exists"
+    else
+        print "[$progress] sync $src -> $dest"
+        rsync $src $dest
+    fi
+done
 
 exit 0
