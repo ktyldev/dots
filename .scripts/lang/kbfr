@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-. $SCRIPTS/keeb
-
+export KBD_LANG="us_qwerty-fr"
 setxkbmap -v -layout us_qwerty-fr

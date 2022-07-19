@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-. $SCRIPTS/keeb
-
+export KBD_LANG=gb
 setxkbmap -v -layout gb

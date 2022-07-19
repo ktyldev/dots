@@ -12,7 +12,6 @@ super + shift + s
 # languages
 super + shift + e
     $SCRIPTS/lang/kben
-
 super + shift + f
     $SCRIPTS/lang/kbfr
 

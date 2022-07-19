@@ -13,6 +13,7 @@ source $SCRIPTS/include.sh
 export TERMINAL=/usr/bin/kitty
 export EDITOR=/usr/bin/nvim
 export ZSH=$HOME/.oh-my-zsh
+export KBD_LANG="gb"
 
 export WTTRURL="wttr.in/?0"
 
