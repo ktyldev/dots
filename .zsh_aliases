@@ -3,6 +3,7 @@
 alias bops="ncmpcpp -c $HOME/.config/ncmpcpp/bopfig"
 alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias f=fff
+alias icat="kitty +kitten icat"
 alias key="$SCRIPTS/sshkey.sh"
 alias nf="neofetch"
 alias o=xdg-open
