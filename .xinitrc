@@ -10,7 +10,7 @@ xbanish &
 
 # set keyboard layout, map caps lock to ctrl and esc
 setxkbmap gb
-sh $SCRIPTS/keeb
+sh $SCRIPTS/kbd/capsctrl
 
 # keybinds
 sxhkd &
