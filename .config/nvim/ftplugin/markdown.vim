@@ -10,5 +10,3 @@ noremap j gj
 noremap k gk
 noremap $ g$
 noremap 0 g0
-
-colo desert
