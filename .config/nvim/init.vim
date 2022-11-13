@@ -1,9 +1,21 @@
+" plugins
+call plug#begin()
+" Make C# usable
+Plug 'OmniSharp/omnisharp-vim'
+
+" TidalCycles livecoding language
+" https://tidalcycles.org/
+Plug 'tidalcycles/vim-tidal'
+call plug#end()
+
+" use neovim's own terminal instead of tmux (needed for TidalCycles)
+let g:tidal_target = "terminal"
+
+" some nice defaults
 set number
 set relativenumber
-
 set expandtab
 set nowrap
-
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -11,9 +23,6 @@ set softtabstop=4
 " Scroll without moving cursor
 noremap <expr> <A-j> "\<C-e>"
 noremap <expr> <A-k> "\<C-y>"
-
-noremap J 10j
-noremap K 10k
 
 " copy to system clipboard
 function! ClipboardYank()
@@ -24,10 +33,3 @@ function! ClipboardPaste()
 endfunction
 vnoremap <silent> <C-c> y:call ClipboardYank()<cr>
 vnoremap <silent> <C-x> d:call ClipboardYank()<cr>
-
-" parentheses handling
-" inoremap { {}<Esc>i<CR><Esc>O<Tab>
-" inoremap [ []<Esc>i
-" inoremap ( ()<Esc>i
-
-colo desert
