@@ -16,12 +16,10 @@ sh $SCRIPTS/kbd/capsctrl
 sxhkd &
 
 # start compositor
-sh $SCRIPTS/comp
+picom -b
 
 # unstrain eyes
 redshift -l 53:0 &
-
-#mopidy &                    # bops
 
 # external drive management
 udiskie &

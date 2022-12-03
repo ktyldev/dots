@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-nohup picom \
-    --config "$HOME/.config/picom/picom.conf"\
-    --experimental-backends &>/dev/null &
