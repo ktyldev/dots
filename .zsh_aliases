@@ -5,12 +5,14 @@ alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias f=fff
 alias icat="kitty +kitten icat"
 alias key="$SCRIPTS/sshkey.sh"
+alias nb="newsboat"
 alias nf="neofetch"
 alias o=xdg-open
 alias p="ping archlinux.org"
 alias pub="curl ident.me; echo"
 alias r=ranger
 alias s="search"
+alias sc="rsync -rP"
 alias sv="sudo $EDITOR"
 alias sx="startx"
 alias sz="source ~/.zshrc"
