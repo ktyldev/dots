@@ -45,13 +45,13 @@ XF86KbdBrightnessDown
 	pactl set-sink-volume 0 +5%
 
 {XF86AudioPrev,super + F5}
-	cmus-remote -r
+	mpc prev
 
 {XF86AudioPlay,super + F6}
-	cmus-remote -u
+	mpc toggle
 
 {XF86AudioNext,super + F7}
-	cmus-remote -n
+	mpc next
 
 #
 # bspwm hotkeys
