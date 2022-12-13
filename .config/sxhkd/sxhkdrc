@@ -10,10 +10,8 @@ super + shift + s
     $SCRIPTS/ss -Dosu
 
 # languages
-super + shift + e
-    $SCRIPTS/lang/kben
-super + shift + f
-    $SCRIPTS/lang/kbfr
+super + shift + l
+    $SCRIPTS/lang/kbnext
 
 #
 # screen backlight

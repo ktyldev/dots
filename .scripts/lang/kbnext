@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# First, we check if the file that keeps track of the number of times the script
+# has been run exists. If not, we create it and initialize it to 0.
+state_file="$HOME/.cache/.kbnext_idx"
+
+if [ ! -f $state_file ]; then
+  touch $state_file
+  echo 0 > $state_file
+fi
+
+# Next, we read the current value in the file and store it in a variable.
+num_runs=$(<$state_file)
+
+# Then, we check if the number of times the script has been run is even or odd.
+# If it is even, we run the first command. If it is odd, we run the second command.
+if (( num_runs % 2 == 0 )); then
+  # Run the first command here.
+  # For example:
+  kben
+else
+  # Run the second command here.
+  # For example:
+  kbfr
+fi
+
+# Finally, we increment the value in the file by 1 to keep track of the number of
+# times the script has been run.
+((num_runs++))
+echo $num_runs > $state_file
