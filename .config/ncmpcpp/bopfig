@@ -1,6 +1,5 @@
-mpd_host = "192.168.1.69"
-mpd_port = 6601
-mpd_music_dir = ~/Music
+mpd_host = "pifi"
+mpd_port = 6600
 
 display_bitrate = yes
 
